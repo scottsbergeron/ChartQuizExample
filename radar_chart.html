@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+</head>
+<body>
+    <a href="https://www.chartjs.org/docs/latest/charts/radar.html">Source</a>
+    <canvas id="myChart" width="200" height="200"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Computer Science', 'Relational Databases', 'API Design', 'System Design', 'Object Oriented Programming'],
+                datasets: [{
+                    label: 'Level',
+                    data: [3, 3, 2, 3, 1],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                spanGaps: true,
+                scale: {
+                    angleLines: {
+                        display: true
+                    },
+                    ticks: {
+                        suggestedMin: 0,
+                        suggestedMax: 4
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
