@@ -1,4 +1,4 @@
 pyenv/
 .idea/
-generated/
+simple_examples/generated/
 *.iml

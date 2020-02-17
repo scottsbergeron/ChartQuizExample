@@ -11,7 +11,7 @@ import readtime
 
 # Initialize text and font
 txt = """Which range of HTTP status codes describes an error with the client?"""
-font = ImageFont.truetype(font='fonts/coolvetica rg.ttf', size=30)
+font = ImageFont.truetype(font='../fonts/coolvetica rg.ttf', size=30)
 
 # Determine size of text
 img = Image.new('RGB', (0, 0), (255, 255, 255))

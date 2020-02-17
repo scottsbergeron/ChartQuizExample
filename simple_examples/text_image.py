@@ -9,7 +9,7 @@ import os
 txt = """This is a long question.
 It goes over multiple lines."""
 # font = ImageFont.load_default()
-font = ImageFont.truetype(font='fonts/coolvetica rg.ttf', size=30)
+font = ImageFont.truetype(font='../fonts/coolvetica rg.ttf', size=30)
 # text_width, text_height = font.getsize(txt)  DOESN'T WORK WITH MULTILINE TEXT
 
 # Determine size of text
