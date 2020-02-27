@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
-import Person from './Person/Person';
 import './App.css';
+import Cockpit from "../components/Cockpit/Cockpit";
+import Persons from '../components/Persons/Persons';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = {
     persons: [
       {id: 1, name: 'Scott', age: 28},
@@ -37,39 +42,25 @@ class App extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
-
     let persons = null;
 
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {
-            return (
-              <Person
-                key={person.id}
-                name={person.name}
-                age={person.age}
-                click={() => this.deletePersonHandler(index)}
-                changed={(event) => this.nameChangedHandler(event, person.id)}>My Hobbies: Racing</Person>
-            );
-          })}
+          <Persons
+            persons={this.state.persons}
+            clicked={this.deletePersonHandler}
+            changed={this.nameChangedHandler} />
         </div>
       );
     }
 
     return (
       <div className="App">
-        <button
-          style={style}
-          onClick={this.togglePersonsHandler}>Click Here
-        </button>
+        <Cockpit
+          showPersons={this.state.showPersons}
+          personLength={this.state.persons.length}
+          btnClicked={this.togglePersonsHandler}/>
         {persons}
       </div>
     );
